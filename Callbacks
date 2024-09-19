@@ -1,0 +1,47 @@
+Callback functions are functions passed as arguments to other functions and invoked later in the code when required.
+
+Example1:- 
+
+function greet(name, callback) {
+  console.log(`Hello, ${name}!`);
+  callback();
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+greet("Alice", sayGoodbye);
+
+Example2:- 
+
+function a(callback){
+  setTimeout(()=
+    console.log("f
+    callback();
+  },3000);
+}
+
+function b(callback){
+  setTimeout(()=> {
+    console.log("function b is called");
+    callback();
+  },2000);
+}
+
+function c(callback){
+  setTimeout(()=> {
+    console.log("function c is called");
+    callback();
+  },1000);
+}
+
+// function call
+a(function(){
+  b(function(){
+    c(function (){
+      console.log("The End");
+    });
+  });
+});
+
